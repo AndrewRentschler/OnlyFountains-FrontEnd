@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { Marker } from 'react-leaflet';
 
 
 interface MapProps {
@@ -33,6 +34,7 @@ const Map: React.FC<MapProps> = ({ defaultLatitude, defaultLongitude }) => {
   return (
     <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
       <SetViewToCurrentLocation />
+      <Marker position={currentLocation}></Marker>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
     </MapContainer>
   );
