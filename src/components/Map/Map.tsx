@@ -10,7 +10,8 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({ defaultLatitude, defaultLongitude }) => {
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([defaultLatitude, defaultLongitude]);
-  
+  const locationEnabled = Boolean(navigator.geolocation);
+
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -32,11 +33,14 @@ const Map: React.FC<MapProps> = ({ defaultLatitude, defaultLongitude }) => {
   };
 
   return (
-    <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
-      <SetViewToCurrentLocation />
-      <Marker position={currentLocation}></Marker>
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-    </MapContainer>
+    <>
+      {!locationEnabled ? <h3>You Must Have Location Services Enabled to Use This App</h3>:null}
+      <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
+        <SetViewToCurrentLocation />
+        <Marker position={currentLocation}></Marker>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      </MapContainer>
+    </>
   );
 };
 
