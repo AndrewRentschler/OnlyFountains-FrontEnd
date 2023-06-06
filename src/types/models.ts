@@ -10,7 +10,7 @@ export interface Coords {
 export interface Profile {
   name: string;
   photo?: string;
-  id: number;
+  id: string;
   createdAt: string;
   updatedAt: string;
 }

@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 
 
 const pages = ['Fountains', 'My Fountains', 'Add Fountain'];
-const settings = ['Profile', 'Account', 'Logout'];
+const settings = ['Profile', 'Logout'];
 const anonSettings = ['Login', 'Signup']
 
 interface AppBarProps {
@@ -141,7 +141,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="a" src="" />
               </IconButton>
             </Tooltip>
             <Menu

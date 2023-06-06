@@ -5,13 +5,20 @@ import * as tokenService from './tokenService'
 import { PhotoFormData } from '../types/forms'
 import { Profile } from '../types/models'
 
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profiles`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profile`
 
-async function getAllProfiles(): Promise<Profile[]> {
-  const res = await fetch(BASE_URL, {
+// async function getAllProfiles(): Promise<Profile[]> {
+//   const res = await fetch(BASE_URL, {
+//     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+//   })
+//   return await res.json() as Profile[]
+// }
+
+async function getProfileById(id: string): Promise<Profile> {
+  const res = await fetch(`${BASE_URL}/${id}`, {
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
   })
-  return await res.json() as Profile[]
+  return await res.json() as Profile
 }
 
 async function addPhoto(photoData: PhotoFormData): Promise<string> {
@@ -34,4 +41,4 @@ async function addPhoto(photoData: PhotoFormData): Promise<string> {
   return await res.json() as string
 }
 
-export { getAllProfiles, addPhoto }
+export { getProfileById, addPhoto }

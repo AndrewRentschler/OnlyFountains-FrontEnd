@@ -1,12 +1,12 @@
 // npm modules 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+import ProfilePage from './pages/ProfilePage/ProfilePage.js'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
@@ -17,15 +17,17 @@ import AppBar from './components/AppBar/AppBar.jsx'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 // types
-import { User } from './types/models'
+import { Profile, User } from './types/models'
 
 function App(): JSX.Element {
-  const [user, setUser] = useState<User | null>(authService.getUser())
+  const [user, setUser] = useState<User | null>(authService.getUser());
+  const [profile, setProfile] = useState<Profile | null>(null);
   
   const navigate = useNavigate()
   
@@ -38,6 +40,21 @@ function App(): JSX.Element {
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
   }
+  useEffect((): void => {
+    const fetchProfile = async (): Promise<void> => {
+      try {
+        if (user) {
+          const profileData: Profile = await profileService.getProfileById(user.profile.id.toString());
+          setProfile(profileData);
+        } else {
+          setProfile(null);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProfile()
+  }, [user])
 
   return (
     <>
@@ -46,10 +63,10 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Landing user={user}/>} />
         <Route
-          path="/profile"
+          path="/auth/profile"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <ProfilePage profile={profile} />
             </ProtectedRoute>
           }
         />
