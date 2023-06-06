@@ -1,21 +1,41 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from "leaflet";
+import React, { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
 
-const Map = () => {
-  return ( 
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-  <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
-  <Marker position={[51.505, -0.09]}>
-    <Popup>
-      A pretty CSS3 popup. <br /> Easily customizable.
-    </Popup>
-  </Marker>
-</MapContainer>
-  );
+interface MapProps {
+  defaultLatitude: number;
+  defaultLongitude: number;
 }
+
+const Map: React.FC<MapProps> = ({ defaultLatitude, defaultLongitude }) => {
+  const [currentLocation, setCurrentLocation] = useState<[number, number]>([defaultLatitude, defaultLongitude]);
+
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setCurrentLocation([latitude, longitude]);
+        },
+        (error) => {
+          console.error('Error getting current location:', error);
+        }
+      );
+    }
+  }, []);
+
+  const SetViewToCurrentLocation = () => {
+    const map = useMap();
+    map.setView(currentLocation, map.getZoom());
+    return null;
+  };
+
+  return (
+    <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
+      <SetViewToCurrentLocation />
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    </MapContainer>
+  );
+};
 
 export default Map;

@@ -1,5 +1,8 @@
 /* ---------===== custom props ====--------- */
-
+export interface Coords {
+  lat: number;
+  lng: number;
+}
 
 
 /* ---------===== auth models =====--------- */

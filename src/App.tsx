@@ -1,5 +1,5 @@
 // npm modules 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -26,6 +26,7 @@ import { User } from './types/models'
 
 function App(): JSX.Element {
   const [user, setUser] = useState<User | null>(authService.getUser())
+  
   const navigate = useNavigate()
   
   const handleLogout = (): void => {
@@ -38,12 +39,14 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
+  
+
   return (
     <>
       <AppBar />
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user}/>} />
         <Route
           path="/profiles"
           element={
