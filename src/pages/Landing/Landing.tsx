@@ -3,7 +3,7 @@ import styles from './Landing.module.css'
 
 // types
 import { User } from '../../types/models'
-import { Coords } from '../../types/models';
+// import { Coords } from '../../types/models';
 
 import Map from '../../components/Map/Map';
 
