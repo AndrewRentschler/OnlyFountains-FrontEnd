@@ -35,6 +35,11 @@ nav > ul {
 #map { height: 180px; }
 
 .leaflet-container {
-  width: 100%;
-  height: 100vh;
+  width: 80%;
+  height: 60vh;
+}
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1;
 }
