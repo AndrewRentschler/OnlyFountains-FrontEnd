@@ -51,7 +51,6 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display: 'flex', justifyContent: 'space-between'}}>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -103,7 +102,9 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`/`} style={{ textDecoration: 'none' }}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>):null}
@@ -131,6 +132,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                href='/'
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

@@ -14,7 +14,6 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import AppBar from './components/AppBar/AppBar.jsx'
 
-
 // services
 import * as authService from './services/authService'
 import * as profileService from './services/profileService'

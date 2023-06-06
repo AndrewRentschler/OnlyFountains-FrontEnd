@@ -7,13 +7,6 @@ import { Profile } from '../types/models'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profile`
 
-// async function getAllProfiles(): Promise<Profile[]> {
-//   const res = await fetch(BASE_URL, {
-//     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
-//   })
-//   return await res.json() as Profile[]
-// }
-
 async function getProfileById(id: string): Promise<Profile> {
   const res = await fetch(`${BASE_URL}/${id}`, {
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
