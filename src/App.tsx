@@ -10,7 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
-import NavBar from './components/NavBar/NavBar'
+// import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import AppBar from './components/AppBar/AppBar'
 
@@ -43,7 +43,7 @@ function App(): JSX.Element {
 
   return (
     <>
-      <AppBar />
+      <AppBar user={user}/>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route path="/" element={<Landing user={user}/>} />

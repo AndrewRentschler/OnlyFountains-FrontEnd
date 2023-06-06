@@ -10,7 +10,7 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({ defaultLatitude, defaultLongitude }) => {
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([defaultLatitude, defaultLongitude]);
-
+  
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
