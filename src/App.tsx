@@ -1,5 +1,5 @@
 // npm modules 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -12,7 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 // import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import AppBar from './components/AppBar/AppBar'
+import AppBar from './components/AppBar/AppBar.jsx'
 
 
 // services
@@ -39,16 +39,14 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
-  
-
   return (
     <>
-      <AppBar user={user}/>
+      <AppBar user={user} handleLogout={handleLogout}/>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route path="/" element={<Landing user={user}/>} />
         <Route
-          path="/profiles"
+          path="/profile"
           element={
             <ProtectedRoute user={user}>
               <Profiles />
@@ -63,6 +61,7 @@ function App(): JSX.Element {
           path="/auth/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
         />
+        <Route path='/auth/logout' element={<Landing user={user}/>}/>
         <Route
           path="/auth/change-password"
           element={

@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import { User } from '../../types/models';
+import { Link } from 'react-router-dom';
 
 
 const pages = ['Fountains', 'My Fountains', 'Add Fountain'];
@@ -22,6 +23,7 @@ const anonSettings = ['Login', 'Signup']
 
 interface AppBarProps {
   user: User | null;
+  handleLogout: () => void;
 }
 
 const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
@@ -161,13 +163,17 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
               {user? (
                 settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
+                      <Link to={`/auth/${setting.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                        <Typography textAlign="center">{setting}</Typography>
+                      </Link>
                     </MenuItem>
                   ))
               ) : (
                   anonSettings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
+                      <Link to={`/auth/${setting.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                        <Typography textAlign="center">{setting}</Typography>
+                      </Link>
                     </MenuItem>
                   ))
               )
