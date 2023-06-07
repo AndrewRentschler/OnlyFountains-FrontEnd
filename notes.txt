@@ -11,3 +11,13 @@
                   </MenuItem>
                 ))
               }
+
+/*
+This is an example Overpass query.
+Try it out by pressing the Run button above!
+You can find more examples with the Load tool.
+*/
+node
+  [amenity=drinking_water]
+  (30.541416982657516,-97.7757453918457,30.731359851500823,-97.56975173950195);
+out;

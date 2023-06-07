@@ -11,8 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
-import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import { User } from '../../types/models';
 import { Link } from 'react-router-dom';
 
@@ -70,7 +68,6 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
           >
             OnlyFountains
           </Typography>
-          <WaterDropIcon />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"

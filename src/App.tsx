@@ -13,6 +13,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import AppBar from './components/AppBar/AppBar.jsx'
+import Footer from './components/Footer/Footer.js'
 
 // services
 import * as authService from './services/authService'
@@ -87,6 +88,7 @@ function App(): JSX.Element {
           }
         />
       </Routes>
+      <Footer />
     </>
   )
 }

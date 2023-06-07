@@ -4,6 +4,12 @@ export interface Coords {
   lng: number;
 }
 
+export interface Fountain {
+  id: number;
+  lat: number;
+  lon: number;
+  tags: JSON;
+}
 
 /* ---------===== auth models =====--------- */
 

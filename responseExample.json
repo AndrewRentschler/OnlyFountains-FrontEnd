@@ -1,0 +1,440 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.57.1 74a55df1",
+  "osm3s": {
+    "timestamp_osm_base": "2023-06-07T18:01:18Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1671062889,
+  "lat": 30.2725651,
+  "lon": -97.7393997,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 3676684703,
+  "lat": 30.2770588,
+  "lon": -97.7170048,
+  "tags": {
+    "amenity": "drinking_water",
+    "fee": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3676727271,
+  "lat": 30.2823090,
+  "lon": -97.7204849,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 3712045959,
+  "lat": 30.2625130,
+  "lon": -97.7491886,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Drinking Fountain 2",
+    "operator": "City of Austin",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3712045960,
+  "lat": 30.2646055,
+  "lon": -97.7500012,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 3852654165,
+  "lat": 30.3072093,
+  "lon": -97.7279014,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 3952968287,
+  "lat": 30.2888466,
+  "lon": -97.7366983,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4166738795,
+  "lat": 30.2457585,
+  "lon": -97.7268608,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Trail Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4174667964,
+  "lat": 30.2494737,
+  "lon": -97.7354702,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4304672632,
+  "lat": 30.2642997,
+  "lon": -97.7439392,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575752220,
+  "lat": 30.2512035,
+  "lon": -97.7190056,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575752221,
+  "lat": 30.2493354,
+  "lon": -97.7232555,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575903079,
+  "lat": 30.2501300,
+  "lon": -97.7321996,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575903081,
+  "lat": 30.2486981,
+  "lon": -97.7285852,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575926779,
+  "lat": 30.2542572,
+  "lon": -97.7392251,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4575926780,
+  "lat": 30.2555820,
+  "lon": -97.7398266,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4629753599,
+  "lat": 30.2726658,
+  "lon": -97.7151665,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 4929739473,
+  "lat": 30.2618193,
+  "lon": -97.7508122,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "no",
+    "fee": "no",
+    "name": "Drinking Fountain 3",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5312613462,
+  "lat": 30.2510781,
+  "lon": -97.7348416,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 8242985259,
+  "lat": 30.2623299,
+  "lon": -97.7492283,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8419556195,
+  "lat": 30.2453728,
+  "lon": -97.7269770,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Restroom Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8974986946,
+  "lat": 30.2429968,
+  "lon": -97.7224926,
+  "tags": {
+    "amenity": "drinking_water"
+  }
+},
+{
+  "type": "node",
+  "id": 8999352173,
+  "lat": 30.2681750,
+  "lon": -97.7475836,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8999365756,
+  "lat": 30.2658416,
+  "lon": -97.7514286,
+  "tags": {
+    "amenity": "drinking_water",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9007189961,
+  "lat": 30.2748057,
+  "lon": -97.7355864,
+  "tags": {
+    "amenity": "drinking_water",
+    "bottle": "no",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9007189991,
+  "lat": 30.2732841,
+  "lon": -97.7362899,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "fee": "no",
+    "fountain": "bubbler",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9007249239,
+  "lat": 30.2735522,
+  "lon": -97.7363145,
+  "tags": {
+    "amenity": "drinking_water",
+    "fee": "no",
+    "fountain": "bubbler",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9459681573,
+  "lat": 30.2400345,
+  "lon": -97.7470021,
+  "tags": {
+    "access": "private",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Pool Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9459690248,
+  "lat": 30.2612584,
+  "lon": -97.7495346,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Drinking Fountain 1",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9459695423,
+  "lat": 30.2470768,
+  "lon": -97.7437538,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Wally Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9459695424,
+  "lat": 30.2478803,
+  "lon": -97.7441734,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Restroom Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9459695425,
+  "lat": 30.2480812,
+  "lon": -97.7433748,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Playground Area Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9459695451,
+  "lat": 30.2615855,
+  "lon": -97.7491467,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "name": "Restroom Drinking Fountain",
+    "operator": "City of Austin",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 9666568224,
+  "lat": 30.2596055,
+  "lon": -97.7495714,
+  "tags": {
+    "amenity": "drinking_water",
+    "bottle": "yes",
+    "fountain": "bubbler"
+  }
+},
+{
+  "type": "node",
+  "id": 9982062904,
+  "lat": 30.2904778,
+  "lon": -97.7315942,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10281110980,
+  "lat": 30.2792825,
+  "lon": -97.7384116,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10291934661,
+  "lat": 30.2780135,
+  "lon": -97.7392431,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10938593097,
+  "lat": 30.2726192,
+  "lon": -97.7412500,
+  "tags": {
+    "access": "yes",
+    "amenity": "drinking_water",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+}
+
+  ]
+}

@@ -16,7 +16,7 @@ const ProfilePage = (props: ProfileProps ): JSX.Element => {
   const { profile } = props;
 
   return (
-    <main>
+    <main className='profile_page'>
       <p>{profile?.name}</p>
     </main>
   )
