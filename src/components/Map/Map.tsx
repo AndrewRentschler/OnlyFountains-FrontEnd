@@ -12,7 +12,7 @@ const Map = () => {
   const [fountains, setFountains] = useState<Fountain[]>([]); // Update the initial state for fountains
 
   const locationEnabled = Boolean(navigator.geolocation);
-  SetViewToCurrentLocation();
+
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -65,7 +65,7 @@ const Map = () => {
             {fountains.map((fountain) => (
               <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
                 <Popup key={fountain.id}>
-                  <h3>{JSON.stringify(fountain.tags)}</h3>
+                  {/* <h3>{JSON.stringify(fountain.tags)}</h3> */}
                 </Popup>
               </Marker>
             ))}
