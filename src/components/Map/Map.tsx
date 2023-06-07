@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
 
 
-interface MapProps {
-  defaultLatitude: number;
-  defaultLongitude: number;
-}
 
-const Map = (props: MapProps): JSX.Element => {
+
+const Map = () => {
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([30.266666, -97.733330]);
   const [fountains, setFountains] = useState<Fountain[]>([]); // Update the initial state for fountains
 
   const locationEnabled = Boolean(navigator.geolocation);
-
+  SetViewToCurrentLocation();
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
