@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import ProfilePage from './pages/ProfilePage/ProfilePage.js'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy.js'
 
 // components
 // import NavBar from './components/NavBar/NavBar'
@@ -87,6 +88,7 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route path='/privacy' element={<PrivacyPolicy />}/>
       </Routes>
       <Footer />
     </>

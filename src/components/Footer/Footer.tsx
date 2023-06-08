@@ -1,6 +1,9 @@
 const Footer = () => {
   return ( 
-    <h4>I am a footer</h4>
+    <div>
+    <p>&copy; 2023 OnlyFountains. All rights reserved.</p>
+    <p><a href="/privacy">Privacy Policy</a></p>
+  </div>
     // ██                                                                                                                          
     // ██                                                                                                                          
     // ██                                                                                                                          
