@@ -1,8 +1,8 @@
 // npm modules
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 // services
-import * as profileService from '../../services/profileService'
+// import * as profileService from '../../services/profileService'
 
 
 // types
