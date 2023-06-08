@@ -79,7 +79,7 @@ const Map = () => {
         {/* <Marker position={currentLocation} /> */}
         {
           <>
-            {fountains.map((fountain) => (
+            {fountains?.map((fountain) => (
               <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
                 <Popup>
                   <h3>{JSON.stringify(fountain.tags)}</h3>
