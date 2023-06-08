@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
@@ -28,12 +28,12 @@ const Map = () => {
   useEffect(() => {
     const debouncedFetchFountains = debounce(fetchFountains, 500);
 
-    async function fetchFountains() {
+    async function fetchFountains(location: [number, number]) {
       try {
         setIsLoading(true);
 
         const radius = 5;
-        const response = await mapService.getFountains(currentLocation[0], currentLocation[1], radius);
+        const response = await mapService.getFountains(location[0], location[1], radius);
         const foundFountains = typeof response === 'string' ? JSON.parse(response) : response;
         const nodeList = foundFountains.elements;
 
@@ -45,7 +45,7 @@ const Map = () => {
       }
     }
 
-    debouncedFetchFountains();
+    debouncedFetchFountains(currentLocation);
 
     return () => {
       // Cleanup the debounced function
@@ -53,19 +53,29 @@ const Map = () => {
     };
   }, [currentLocation]);
 
-  function SetViewToCurrentLocation() {
+  function MapView() {
     const map = useMap();
-    map.setView(currentLocation, map.getZoom());
+
+    const handleMapMove = () => {
+      const center = map.getCenter();
+      const newLocation: [number, number] = [center.lat, center.lng];
+      setCurrentLocation(newLocation);
+    };
+
+    useMapEvents({
+      moveend: handleMapMove,
+    });
+
     return null;
   }
 
   return (
     <>
       {!locationEnabled && <h3>You Must Have Location Services Enabled to Use This App</h3>}
-      {isLoading && <h3>Loading...</h3>}
+      {/* {isLoading ? <h3>Loading...</h3> : <h3> </h3>} */}
       <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
-        <SetViewToCurrentLocation />
-        <Marker position={currentLocation} />
+        <MapView />
+        {/* <Marker position={currentLocation} /> */}
         {fountains.length > 0 && (
           <>
             {fountains.map((fountain) => (
