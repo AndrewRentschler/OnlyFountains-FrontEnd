@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet';
 import { Marker, Popup } from 'react-leaflet';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
 import { debounce } from 'lodash';
@@ -64,6 +66,11 @@ const Map = (mapProps: MapProps): JSX.Element => {
     console.log(`Fountain ID: ${fountainId}, Rating: ${rating}`);
   };
 
+  const handleRouteClick = (lat: number, lon: number) => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+    window.open(url, '_blank');
+  };
+
   function MapView() {
     const map = useMap();
     const handleMapMove = () => {
@@ -87,7 +94,12 @@ const Map = (mapProps: MapProps): JSX.Element => {
         {fountains?.map((fountain) => (
           <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
             <Popup>
-              {user?<Rating fountain={fountain} handleRatingSubmit={handleRatingSubmit} />:null}
+                {user?<Rating fountain={fountain} handleRatingSubmit={handleRatingSubmit} />:null}
+                <Tooltip title="Opens in new tab">
+                  <Button variant="contained" onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
+                    Open Route
+                  </Button>
+                </Tooltip>
             </Popup>
           </Marker>
         ))}
