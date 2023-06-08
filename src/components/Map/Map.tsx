@@ -10,6 +10,7 @@ const Map = () => {
   const [fountains, setFountains] = useState<Fountain[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const locationEnabled = Boolean(navigator.geolocation);
+  console.log(isLoading)
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -72,7 +73,7 @@ const Map = () => {
   return (
     <>
       {!locationEnabled && <h3>You Must Have Location Services Enabled to Use This App</h3>}
-      {console.log(isLoading)}//TODO: FIX THIS TO NOT BE A CONSOLE LOG
+      {/* {console.log(isLoading)} FIX THIS TO NOT BE A CONSOLE LOG */}
       <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
         <MapView />
         {/* <Marker position={currentLocation} /> */}
