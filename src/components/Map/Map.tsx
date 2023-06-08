@@ -77,7 +77,7 @@ const Map = () => {
       <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
         <MapView />
         {/* <Marker position={currentLocation} /> */}
-        {fountains.length > 0 && (
+        {
           <>
             {fountains.map((fountain) => (
               <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
@@ -87,7 +87,7 @@ const Map = () => {
               </Marker>
             ))}
           </>
-        )}
+        }
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       </MapContainer>
     </>
