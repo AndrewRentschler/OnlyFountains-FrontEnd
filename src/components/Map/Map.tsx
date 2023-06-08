@@ -72,7 +72,7 @@ const Map = () => {
   return (
     <>
       {!locationEnabled && <h3>You Must Have Location Services Enabled to Use This App</h3>}
-      {/* {isLoading ? <h3>Loading...</h3> : <h3> </h3>} */}
+      {console.log(isLoading)}//TODO: FIX THIS TO NOT BE A CONSOLE LOG
       <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
         <MapView />
         {/* <Marker position={currentLocation} /> */}
