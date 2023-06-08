@@ -21,6 +21,7 @@ const Rating = (props: RatingProps) => {
 
   const handleChange = (event: Event, value: number | number[]): void => {
     // console.log(event, "event", value, "value");
+    event?null:null;
     const ratingValue = Array.isArray(value) ? value[0] : value;
     const intValue = typeof ratingValue === 'number' ? Math.round(ratingValue) : 0;
     props.handleRatingSubmit(props.fountain.id, intValue);

@@ -18,8 +18,8 @@ const Landing = (props: LandingProps): JSX.Element => {
   return (
     <main className={styles.container}>
       <FountainIcon height={64} />
-      <h1>{!user?'Please Login to Find & Rate Cold Fountains in Your Area':''}</h1>
-      <Map />
+      <h1>{!user?'Please Login to Rate Cold Fountains in Your Area':''}</h1>
+      <Map user={user}/>
     </main>
   )
 }

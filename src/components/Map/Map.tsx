@@ -5,8 +5,14 @@ import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
 import { debounce } from 'lodash';
 import Rating from '../Rating/Rating';
+import { User } from '../../types/models';
 
-const Map = () => {
+interface MapProps {
+  user: User | null;
+}
+
+const Map = (mapProps: MapProps): JSX.Element => {
+  const { user } = mapProps;
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([30.266666, -97.733330]);
   const [fountains, setFountains] = useState<Fountain[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,16 +38,13 @@ const Map = () => {
   // Fetch fountains within the visible map area
   useEffect(() => {
     const debouncedFetchFountains = debounce(fetchFountains, 500);
-
     async function fetchFountains(location: [number, number]) {
       try {
         setIsLoading(true);
-
         const radius = 10;
         const response = await mapService.getFountains(location[0], location[1], radius);
         const foundFountains = typeof response === 'string' ? JSON.parse(response) : response;
         const nodeList = foundFountains.elements;
-
         setFountains(nodeList);
         setIsLoading(false);
       } catch (error) {
@@ -84,7 +87,7 @@ const Map = () => {
         {fountains?.map((fountain) => (
           <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
             <Popup>
-              <Rating fountain={fountain} handleRatingSubmit={handleRatingSubmit} />
+              {user?<Rating fountain={fountain} handleRatingSubmit={handleRatingSubmit} />:null}
             </Popup>
           </Marker>
         ))}
