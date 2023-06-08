@@ -11,12 +11,18 @@ export interface Fountain {
   tags: JSON;
 }
 
+export interface Rating {
+  value: number;
+  profileId: number;
+  fountainId: number;
+}
+
 /* ---------===== auth models =====--------- */
 
 export interface Profile {
   name: string;
   photo?: string;
-  id: string;
+  id: number;
   createdAt: string;
   updatedAt: string;
 }

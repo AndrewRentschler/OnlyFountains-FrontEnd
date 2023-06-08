@@ -1,5 +1,8 @@
 /* ---------==== custom forms ====--------- */
-
+export interface RatingFormData {
+  rating: number;
+  profileId: number;
+}
 
 
 /* ---------===== auth forms =====--------- */
