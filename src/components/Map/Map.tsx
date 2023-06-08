@@ -3,14 +3,12 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
-
-
-
+import { debounce } from 'lodash';
 
 const Map = () => {
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([30.266666, -97.733330]);
-  const [fountains, setFountains] = useState<Fountain[]>([]); // Update the initial state for fountains
-
+  const [fountains, setFountains] = useState<Fountain[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const locationEnabled = Boolean(navigator.geolocation);
 
   useEffect(() => {
@@ -28,26 +26,32 @@ const Map = () => {
   }, []);
 
   useEffect(() => {
-    console.log(fountains, 'fountains')
+    const debouncedFetchFountains = debounce(fetchFountains, 500);
+
     async function fetchFountains() {
-      console.log('fetching fountains');
       try {
+        setIsLoading(true);
+
         const radius = 5;
-        console.log('trying to get fountains')
         const response = await mapService.getFountains(currentLocation[0], currentLocation[1], radius);
-        console.log('response')
         const foundFountains = typeof response === 'string' ? JSON.parse(response) : response;
-        // console.log(foundFountains.elements, 'foundFountains')
         const nodeList = foundFountains.elements;
-        // console.log(nodeArray, 'nodeArray')
+
         setFountains(nodeList);
+        setIsLoading(false);
       } catch (error) {
-        console.log(error, 'error');
+        console.error('Error fetching fountains:', error);
+        setIsLoading(false);
       }
     }
-    fetchFountains();
-    console.log(fountains, "fountains") // Call the fetchFountains function inside the useEffect
-  }, [currentLocation, fountains]);
+
+    debouncedFetchFountains();
+
+    return () => {
+      // Cleanup the debounced function
+      debouncedFetchFountains.cancel();
+    };
+  }, [currentLocation]);
 
   function SetViewToCurrentLocation() {
     const map = useMap();
@@ -57,15 +61,17 @@ const Map = () => {
 
   return (
     <>
-      {!locationEnabled ? <h3>You Must Have Location Services Enabled to Use This App</h3> : null}
+      {!locationEnabled && <h3>You Must Have Location Services Enabled to Use This App</h3>}
+      {isLoading && <h3>Loading...</h3>}
       <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
-        <Marker position={currentLocation}></Marker>
+        <SetViewToCurrentLocation />
+        <Marker position={currentLocation} />
         {fountains.length > 0 && (
           <>
             {fountains.map((fountain) => (
               <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
-                <Popup key={fountain.id}>
-                  {/* <h3>{JSON.stringify(fountain.tags)}</h3> */}
+                <Popup>
+                  <h3>{JSON.stringify(fountain.tags)}</h3>
                 </Popup>
               </Marker>
             ))}
