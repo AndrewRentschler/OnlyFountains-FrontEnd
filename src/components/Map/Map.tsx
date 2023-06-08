@@ -10,7 +10,7 @@ const Map = () => {
   const [fountains, setFountains] = useState<Fountain[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const locationEnabled = Boolean(navigator.geolocation);
-  console.log(isLoading)
+  isLoading? null:null
 
   useEffect(() => {
     if ('geolocation' in navigator) {
