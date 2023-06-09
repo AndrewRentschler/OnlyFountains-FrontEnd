@@ -92,7 +92,7 @@ function Map(mapProps: MapProps) {
               <p>Lon: {fountain.lon}</p>
               {user ? <RatingComponent fountain={fountain} profileId={user.profile.id}/> : null}
               <Tooltip title="Opens in new tab">
-                <Button variant="contained" onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
+                <Button onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
                   Open Route
                 </Button>
               </Tooltip>
