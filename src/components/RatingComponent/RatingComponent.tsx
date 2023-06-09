@@ -35,6 +35,7 @@ const RatingComponent = (props: RatingProps) => {
     return myRating?myRating.value:null;
   }
   const myRating = checkRating(fountainId, profileId);
+  console.log(myRating, "myRating");
 
   const submitRating = () => {
     const newRating: Rating = {
@@ -57,7 +58,7 @@ const RatingComponent = (props: RatingProps) => {
   return (
     <section>
       <h3>Rate This Fountain</h3>
-      <p>{myRating != null ? myRating.toString():"Not yet Rated"}</p>
+      <p>Not Yet Rated</p>
       <Slider
         aria-label="Rating"
         defaultValue={3}
