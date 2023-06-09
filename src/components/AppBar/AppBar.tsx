@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -46,7 +45,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
   };
 
   return (
-    <AppBar position="static" sx={{height:"8vh"}}>
+    <AppBar position="static" sx={{height:"72px"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Typography
@@ -77,7 +76,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              {user?<MenuIcon />:null}
+              {user?null:null}
             </IconButton>
             {user? (<Menu
               id="menu-appbar"
@@ -86,6 +85,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
                 vertical: 'bottom',
                 horizontal: 'left',
               }}
+              hidden={true}
               keepMounted
               transformOrigin={{
                 vertical: 'top',

@@ -29,7 +29,6 @@ import { Profile, User } from './types/models'
 function App(): JSX.Element {
   const [user, setUser] = useState<User | null>(authService.getUser());
   const [profile, setProfile] = useState<Profile | null>(null);
-  
   const navigate = useNavigate()
   
   const handleLogout = (): void => {
@@ -60,7 +59,6 @@ function App(): JSX.Element {
   return (
     <>
       <AppBar user={user} handleLogout={handleLogout}/>
-      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route path="/" element={<Landing user={user}/>} />
         <Route
