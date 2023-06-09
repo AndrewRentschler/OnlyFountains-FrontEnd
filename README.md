@@ -12,10 +12,10 @@ Locate Drinking Fountains: OnlyFountains utilizes the power of the OpenStreetMap
 # Rate Fountains: 
 Users have the ability to rate the drinking fountains they visit through OnlyFountains. By sharing their experiences and providing ratings, users can help others make informed decisions about which fountains to use.
 
-#Contribute to the Global Database: 
+# Contribute to the Global Database: 
 In the future, OnlyFountains will enable users to contribute by adding new drinking fountains to the OpenStreetMap global database. By expanding the database, users can help ensure that accurate and up-to-date information is available to people worldwide.
 
-#Why OnlyFountains?
+# Why OnlyFountains?
 Access to clean and safe drinking water is a fundamental necessity for everyone. However, locating drinking fountains can be challenging, especially in unfamiliar areas. OnlyFountains addresses this issue by providing a simple and intuitive way to find drinking fountains nearby.
 
 By using OnlyFountains, users can contribute to a community-driven effort to enhance the global availability of drinking fountain information. The ability to rate fountains allows users to share their experiences and guide others towards reliable water sources. Additionally, the future capability of adding fountains to the OpenStreetMap database empowers users to directly impact the accuracy and coverage of fountain data on a global scale.
