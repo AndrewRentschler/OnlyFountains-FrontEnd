@@ -21,15 +21,16 @@ Access to clean and safe drinking water is a fundamental necessity for everyone.
 By using OnlyFountains, users can contribute to a community-driven effort to enhance the global availability of drinking fountain information. The ability to rate fountains allows users to share their experiences and guide others towards reliable water sources. Additionally, the future capability of adding fountains to the OpenStreetMap database empowers users to directly impact the accuracy and coverage of fountain data on a global scale.
 
 # Attributions
-Material UI
-Leaflet
-React-Leaflet
-Open Street Map
-Open Street Map API
-Google Maps API
+- Material UI
+- Leaflet
+- React-Leaflet
+- Open Street Map
+- Open Street Map API
+- Google Maps API
 https://www.flaticon.com/free-icon/fountain_1973287?term=water+fountain&page=1&position=53&origin=search&related_id=1973287
 
 # Technologies
+Netlify [![Netlify Status](https://api.netlify.com/api/v1/badges/d4836f3d-0c66-41d6-9ba7-3afbe9486960/deploy-status)](https://app.netlify.com/sites/onlyfountains/deploys)
 Material UI
 JSON
 JWT Auth
@@ -42,7 +43,7 @@ CSS
 Vite
 
 # Future Enhancements
-Crowdsourced Potable Drinking Water Locations with API
+Crowdsourced Potable Drinking Water Locations with an open API
 Improved Routing From Your Location
 Ability to Add Images to Fountains
 Ability to Rate Fountains on Multiple Attributes
