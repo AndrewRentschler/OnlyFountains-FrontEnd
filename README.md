@@ -4,7 +4,7 @@
 OnlyFountains is a mobile application that helps users locate drinking fountains in their vicinity. With the aid of the OpenStreetMap API, this app renders a map interface and provides the ability to find nearby drinking fountain locations. Users can also rate the fountains they visit, and in the future, they will have the option to contribute by adding fountains to the global OpenStreetMap database.
 
 # Get Started!
-https://onlyfountains.netlify.app/
+[OnlyFountains](https://onlyfountains.netlify.app/)
 
 # Features
 Locate Drinking Fountains: OnlyFountains utilizes the power of the OpenStreetMap API to display a map interface that allows users to find drinking fountains near their current location. This feature ensures that users can easily access clean and potable water whenever they need it.
@@ -47,4 +47,4 @@ https://www.flaticon.com/free-icon/fountain_1973287?term=water+fountain&page=1&p
 - Improved Routing From Your Location
 - Ability to Add Images to Fountains
 - Ability to Rate Fountains on Multiple Attributes
--Google Streetview Integration
+- Google Streetview Integration

@@ -58,7 +58,7 @@ const RatingComponent = (props: RatingProps) => {
   return (
     <section>
       <h3>Rate This Fountain</h3>
-      <p>Not Yet Rated</p>
+      <p>{rating>0? `My Rating: ${rating}` :"Not Yet Rated"}</p>
       <Slider
         aria-label="Rating"
         defaultValue={3}
