@@ -27,7 +27,7 @@ By using OnlyFountains, users can contribute to a community-driven effort to enh
 - Open Street Map
 - Open Street Map API
 - Google Maps API
-https://www.flaticon.com/free-icon/fountain_1973287?term=water+fountain&page=1&position=53&origin=search&related_id=1973287
+- https://www.flaticon.com/free-icon/fountain_1973287?term=water+fountain&page=1&position=53&origin=search&related_id=1973287
 
 # Technologies
 - Netlify [![Netlify Status](https://api.netlify.com/api/v1/badges/d4836f3d-0c66-41d6-9ba7-3afbe9486960/deploy-status)](https://app.netlify.com/sites/onlyfountains/deploys)
