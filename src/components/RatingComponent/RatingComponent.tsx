@@ -4,21 +4,16 @@ import { useRef } from "react";
 //types
 import { Fountain } from "../../types/models";
 import { Rating } from "../../types/models";
-// import { Profile } from "../../types/models";
-// import { RatingFormData } from "../../types/forms";
 import * as ratingService from "../../services/ratingService";
 
 //mui
 import { Slider } from "@mui/material";
 import { Button } from "@mui/material";
 
-
-
 interface RatingProps {
   fountain: Fountain;
   profileId: number;
 }
-
 
 const RatingComponent = (props: RatingProps) => {
   const fountainId = props.fountain.id;
@@ -40,7 +35,6 @@ const RatingComponent = (props: RatingProps) => {
     return myRating?myRating.value:null;
   }
   const myRating = checkRating(fountainId, profileId);
-  
 
   const submitRating = () => {
     const newRating: Rating = {
@@ -59,7 +53,7 @@ const RatingComponent = (props: RatingProps) => {
       console.error("Error adding rating:", error);
     }
   }
-  
+
   return (
     <section>
       <h3>Rate This Fountain</h3>

@@ -1,10 +1,3 @@
-// npm modules
-// import { useState, useEffect } from 'react'
-
-// services
-// import * as profileService from '../../services/profileService'
-
-
 // types
 import { Profile } from '../../types/models'
 
@@ -17,6 +10,8 @@ const ProfilePage = (props: ProfileProps ): JSX.Element => {
 
   return (
     <main className='profile_page'>
+      <h1>Profile Page</h1>
+      <img src={profile?.photo} alt="" />
       <p>{profile?.name}</p>
     </main>
   )

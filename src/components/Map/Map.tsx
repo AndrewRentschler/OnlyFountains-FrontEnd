@@ -9,8 +9,6 @@ import { debounce } from 'lodash';
 import { User } from '../../types/models';
 import RatingComponent from '../RatingComponent/RatingComponent';
 
-
-
 interface MapProps {
   user: User | null;
 }
@@ -20,7 +18,6 @@ function Map(mapProps: MapProps) {
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([30.266666, -97.733330]);
   const [fountains, setFountains] = useState<Fountain[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const locationEnabled = Boolean(navigator.geolocation);
   isLoading ? null : null;
 
@@ -45,7 +42,7 @@ function Map(mapProps: MapProps) {
     async function fetchFountains(location: [number, number]) {
       try {
         setIsLoading(true);
-        const radius = 10;
+        const radius = 5;
         const response = await mapService.getFountains(location[0], location[1], radius);
         const foundFountains = typeof response === 'string' ? JSON.parse(response) : response;
         const nodeList = foundFountains.elements;
@@ -56,7 +53,6 @@ function Map(mapProps: MapProps) {
         setIsLoading(false);
       }
     }
-
     debouncedFetchFountains(currentLocation);
 
     return () => {
@@ -64,15 +60,11 @@ function Map(mapProps: MapProps) {
     };
   }, [currentLocation]);
 
-
   const handleRouteClick = (lat: number, lon: number) => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
     window.open(url, '_blank');
   };
   
-
-  
-
   function MapView() {
     const map = useMap();
     const handleMapMove = () => {
@@ -87,7 +79,6 @@ function Map(mapProps: MapProps) {
 
     return null;
   }
-  
 
   return (
     <>
@@ -97,6 +88,8 @@ function Map(mapProps: MapProps) {
         {fountains?.map((fountain) => (
           <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
             <Popup>
+              <p>Lat: {fountain.lat}</p>
+              <p>Lon: {fountain.lon}</p>
               {user ? <RatingComponent fountain={fountain} profileId={user.profile.id}/> : null}
               <Tooltip title="Opens in new tab">
                 <Button variant="contained" onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
