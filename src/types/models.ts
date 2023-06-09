@@ -13,7 +13,7 @@ export interface Fountain {
 
 export interface Rating {
   value: number;
-  profileId: number;
+  raterId: number;
   fountainId: number;
 }
 

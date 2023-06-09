@@ -1,6 +1,3 @@
-// css
-import styles from './Landing.module.css'
-
 // types
 import { User } from '../../types/models'
 // import { Coords } from '../../types/models';
@@ -16,7 +13,7 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props;
 
   return (
-    <main className={styles.container}>
+    <main>
       <FountainIcon height={64} />
       <h1>{!user?'Please Login to Rate Cold Fountains in Your Area':''}</h1>
       <Map user={user}/>

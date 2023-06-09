@@ -10,7 +10,7 @@ async function getFountains(lat: number, lon:number, rad: number): Promise<void>
 }
 
 async function getFountainById(id: string): Promise<Fountain> {
-  const res = await fetch(`${BASE_URL}/fountain/${id}`)
+  const res = await fetch(`${BASE_URL}/${id}`)
   return await res.json() as Fountain
 }
 

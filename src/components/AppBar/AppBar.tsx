@@ -46,7 +46,7 @@ const ResponsiveAppBar = (props: AppBarProps): JSX.Element => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{height:"8vh"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Typography

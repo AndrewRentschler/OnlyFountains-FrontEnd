@@ -6,14 +6,16 @@ import Tooltip from '@mui/material/Tooltip';
 import * as mapService from '../../services/mapService';
 import { Fountain } from '../../types/models';
 import { debounce } from 'lodash';
-import Rating from '../Rating/Rating';
 import { User } from '../../types/models';
+import RatingComponent from '../RatingComponent/RatingComponent';
+
+
 
 interface MapProps {
   user: User | null;
 }
 
-const Map = (mapProps: MapProps): JSX.Element => {
+function Map(mapProps: MapProps) {
   const { user } = mapProps;
   const [currentLocation, setCurrentLocation] = useState<[number, number]>([30.266666, -97.733330]);
   const [fountains, setFountains] = useState<Fountain[]>([]);
@@ -62,14 +64,14 @@ const Map = (mapProps: MapProps): JSX.Element => {
     };
   }, [currentLocation]);
 
-  const handleRatingSubmit = (fountainId: number, rating: number) => {
-    console.log(`Fountain ID: ${fountainId}, Rating: ${rating}`);
-  };
 
   const handleRouteClick = (lat: number, lon: number) => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
     window.open(url, '_blank');
   };
+  
+
+  
 
   function MapView() {
     const map = useMap();
@@ -85,21 +87,22 @@ const Map = (mapProps: MapProps): JSX.Element => {
 
     return null;
   }
+  
 
   return (
     <>
       {!locationEnabled && <h3>You Must Have Location Services Enabled to Use This App</h3>}
-      <MapContainer center={currentLocation} zoom={13} style={{ height: '400px' }}>
+      <MapContainer center={currentLocation} zoom={13} style={{ height: '80%' }}>
         <MapView />
         {fountains?.map((fountain) => (
           <Marker key={fountain.id} position={[fountain.lat, fountain.lon]}>
             <Popup>
-                {user?<Rating fountain={fountain} handleRatingSubmit={handleRatingSubmit} />:null}
-                <Tooltip title="Opens in new tab">
-                  <Button variant="contained" onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
-                    Open Route
-                  </Button>
-                </Tooltip>
+              {user ? <RatingComponent fountain={fountain} profileId={user.profile.id}/> : null}
+              <Tooltip title="Opens in new tab">
+                <Button variant="contained" onClick={() => handleRouteClick(fountain.lat, fountain.lon)}>
+                  Open Route
+                </Button>
+              </Tooltip>
             </Popup>
           </Marker>
         ))}
@@ -107,6 +110,6 @@ const Map = (mapProps: MapProps): JSX.Element => {
       </MapContainer>
     </>
   );
-};
+}
 
 export default Map;
